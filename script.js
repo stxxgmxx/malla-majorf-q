@@ -1,12 +1,20 @@
 const ramos = [
   { id: "precalculo", nombre: "Precálculo", requisitos: [], abre: ["calculo1"] },
+  { id: "fisica1", nombre: "Física General", requisitos: [], abre: ["fisica2"] },
+  { id: "biologia", nombre: "Biología de la Célula", requisitos: [], abre: ["fisiologia"] },
+  { id: "quimica1", nombre: "Química General", requisitos: [], abre: ["quimica2"] },
+
   { id: "calculo1", nombre: "Cálculo I", requisitos: ["precalculo"], abre: ["calculo2"] },
+  { id: "quimica2", nombre: "Química General II", requisitos: ["quimica1"], abre: [] },
+  { id: "fisica2", nombre: "Física General II", requisitos: ["fisica1"], abre: [] },
+  { id: "fisiologia", nombre: "Fisiología", requisitos: ["biologia"], abre: [] },
+
   { id: "calculo2", nombre: "Cálculo II", requisitos: ["calculo1"], abre: [] }
 ];
 
 const semestres = [
-  { nombre: "Semestre 1", cursos: ["precalculo"] },
-  { nombre: "Semestre 2", cursos: ["calculo1"] },
+  { nombre: "Semestre 1", cursos: ["precalculo", "fisica1", "biologia", "quimica1"] },
+  { nombre: "Semestre 2", cursos: ["calculo1", "quimica2", "fisica2", "fisiologia"] },
   { nombre: "Semestre 3", cursos: ["calculo2"] }
 ];
 
@@ -62,17 +70,13 @@ semestres.forEach((sem) => {
   titulo.textContent = sem.nombre;
   contenedor.appendChild(titulo);
 
-  const grid = document.createElement("div");
-  grid.classList.add("ramos-grid");
-
   sem.cursos.forEach((id) => {
     const ramo = ramos.find((r) => r.id === id);
     if (ramo) {
       const el = crearRamo(ramo);
-      grid.appendChild(el);
+      contenedor.appendChild(el);
     }
   });
 
-  contenedor.appendChild(grid);
   malla.appendChild(contenedor);
 });
