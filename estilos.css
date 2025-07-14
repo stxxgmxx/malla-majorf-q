@@ -11,38 +11,38 @@ h1 {
   margin-bottom: 2rem;
 }
 
+/* Malla en columnas: cada semestre es una columna */
 #malla {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  max-width: 100%;
 }
 
+/* Semestre como columna */
 .semestre {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 220px;
 }
 
 .semestre-title {
   font-weight: bold;
   font-size: 1.2rem;
   color: #007c91;
+  text-align: center;
   margin-bottom: 0.5rem;
 }
 
-.ramos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
+/* Cada ramo es una caja */
 .ramo {
   background-color: #b2ebf2;
   border: 2px solid #007c91;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.75rem;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
