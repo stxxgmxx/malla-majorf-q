@@ -1,4 +1,3 @@
-/* 🎨 Estilo general del cuerpo */
 body {
   font-family: Arial, sans-serif;
   background-color: #e0f7fa;
@@ -6,13 +5,11 @@ body {
   padding: 1rem;
 }
 
-/* 🏷️ Título */
 h1 {
   text-align: center;
   color: #007c91;
 }
 
-/* 📦 Malla en formato de cuadrícula */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -21,7 +18,6 @@ h1 {
   margin: auto;
 }
 
-/* 📚 Cuadro de ramo base */
 .ramo {
   background-color: #b2ebf2;
   border: 2px solid #007c91;
@@ -32,33 +28,20 @@ h1 {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* 💡 Hover sobre ramos disponibles */
 .ramo:hover {
   background-color: #4dd0e1;
   transform: scale(1.02);
 }
 
-/* ✅ Ramos aprobados */
 .ramo.aprobado {
   background-color: #4db6ac;
   color: white;
   border-color: #00796b;
 }
 
-/* ⛔ Ramos bloqueados (con requisitos no cumplidos) */
 .ramo.bloqueado {
   background-color: #eeeeee;
   color: #aaaaaa;
   border-color: #cccccc;
   cursor: not-allowed;
-}
-
-/* 🗂️ Estilo para títulos de semestre (si se agregan) */
-.semestre {
-  font-weight: bold;
-  margin-top: 2rem;
-  grid-column: 1 / -1;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #007c91;
 }
