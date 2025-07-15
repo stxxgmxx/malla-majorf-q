@@ -3,12 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Major en Ciencias Farmacéuticas</title>
-  <link rel="stylesheet" href="colores.css" />
+  <title>Malla Interactiva Farmacéutica</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <h1>Major en Ciencias Farmacéuticas</h1>
-  <div id="malla"></div>
+  <h1>Malla Interactiva - Ciencias Farmacéuticas</h1>
+  <div class="malla">
+    <!-- Cada semestre es una columna -->
+    <div class="semestre" id="sem1">
+      <h2>Semestre 1</h2>
+      <div class="ramo" data-id="precalculo" data-desbloquea="calculo1">Precálculo</div>
+      <div class="ramo" data-id="fisica1" data-desbloquea="fisica2,quimicafisica">Física General</div>
+      <div class="ramo" data-id="biocelula" data-desbloquea="fisiologia">Biología de la Célula</div>
+      <div class="ramo" data-id="quimgeneral1" data-desbloquea="quimgeneral2">Química General</div>
+      <div class="ramo">AFG Salud y Bienestar</div>
+      <div class="ramo">Taller de Iniciación</div>
+    </div>
+
+    <div class="semestre" id="sem2">
+      <h2>Semestre 2</h2>
+      <div class="ramo" data-id="calculo1" data-desbloquea="calculo2,quimicafisica" data-requiere="precalculo">Cálculo I</div>
+      <div class="ramo" data-id="quimgeneral2" data-desbloquea="quimorga1" data-requiere="quimgeneral1">Química General II</div>
+      <div class="ramo" data-id="fisica2" data-requiere="fisica1">Física General II</div>
+      <div class="ramo" data-id="labfisica2" data-requiere="fisica2">Lab Física General II</div>
+      <div class="ramo">El Mundo de los Medicamentos</div>
+      <div class="ramo">AFG Liberada</div>
+    </div>
+
+    <div class="semestre" id="sem3">
+      <h2>Semestre 3</h2>
+      <div class="ramo" data-id="calculo2" data-requiere="calculo1">Cálculo II</div>
+      <div class="ramo" data-id="quimorga1" data-desbloquea="quimorga2" data-requiere="quimgeneral2">Química Orgánica I</div>
+      <div class="ramo">OE: Introducción a las Ciencias Farmacéuticas</div>
+      <div class="ramo">OE: Botánica y Farmacognosia</div>
+      <div class="ramo">Laboratorio de Química General</div>
+      <div class="ramo">AFG Ciencias Sociales</div>
+    </div>
+
+    <div class="semestre" id="sem4">
+      <h2>Semestre 4</h2>
+      <div class="ramo" data-id="epc" data-requiere="calculo2">Estadística p/ QF</div>
+      <div class="ramo">Optativo Disciplinario</div>
+      <div class="ramo" data-id="quimorga2" data-desbloquea="quimicafisica,bioquimica,quimanalisis,labquimorga" data-requiere="quimorga1">Química Orgánica II</div>
+      <div class="ramo" data-id="fisiologia" data-desbloquea="fisiopatologia" data-requiere="biocelula">Fisiología</div>
+      <div class="ramo">Filosofía: ¿Para Qué?</div>
+    </div>
+
+    <div class="semestre" id="sem5">
+      <h2>Semestre 5</h2>
+      <div class="ramo" data-id="quimicafisica" data-desbloquea="farmacoq1,farmacocinetica" data-requiere="fisica1,calculo1,quimorga2">Química-Física</div>
+      <div class="ramo" data-id="fisiopatologia" data-desbloquea="farmacologia1,bqclinica" data-requiere="fisiologia">Fisiopatología</div>
+      <div class="ramo" data-id="bioquimica" data-desbloquea="farmacologia1,bqclinica" data-requiere="quimorga2">Bioquímica</div>
+      <div class="ramo">Curso Minor</div>
+      <div class="ramo">AFG Ecología Integral</div>
+    </div>
+
+    <div class="semestre" id="sem6">
+      <h2>Semestre 6</h2>
+      <div class="ramo" data-id="quimanalisis" data-desbloquea="analisisinstr" data-requiere="quimorga2">Química Analítica</div>
+      <div class="ramo">OE: Microbiología e Inmunología</div>
+      <div class="ramo">Curso Minor</div>
+      <div class="ramo">Curso Minor</div>
+      <div class="ramo">AFG Artes</div>
+    </div>
+
+    <div class="semestre" id="sem7">
+      <h2>Semestre 7</h2>
+      <div class="ramo" data-id="analisisinstr" data-requiere="quimanalisis">Análisis Instrumental</div>
+      <div class="ramo" data-id="labquimorga" data-desbloquea="farmacoq1" data-requiere="quimorga2">Lab Química Orgánica</div>
+      <div class="ramo">Curso Minor</div>
+      <div class="ramo">Curso Minor</div>
+      <div class="ramo">AFG Humanidades</div>
+    </div>
+
+    <div class="semestre" id="sem8">
+      <h2>Semestre 8</h2>
+      <div class="ramo" data-id="farmacoq1" data-requiere="quimicafisica,labquimorga">Fármaco Química I</div>
+      <div class="ramo" data-id="farmacocinetica" data-requiere="quimicafisica">Farmacocinética y Biofarmacia</div>
+      <div class="ramo" data-id="farmacologia1" data-requiere="fisiopatologia,bioquimica">Farmacología I</div>
+      <div class="ramo" data-id="bqclinica" data-requiere="farmacoq1,farmacologia1">Bioquímica Clínica</div>
+      <div class="ramo">AFG Teológico</div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
